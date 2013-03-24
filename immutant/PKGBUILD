@@ -23,7 +23,7 @@ backup=(etc/profile.d/${pkgname}.sh
 
 install=${pkgname}.install
 
-source=(http://repository-projectodd.forge.cloudbees.com/release/org/immutant/immutant-dist/${pkgver}/immutant-dist-${pkgver}-bin.zip
+source=(http://repository-projectodd.forge.cloudbees.com/release/org/immutant/immutant-dist/${pkgver}/immutant-dist-${pkgver}-slim.zip
 	immutant.wrapper
         immutant.install
         immutant.profile
@@ -36,6 +36,7 @@ package() {
   install -Dm755 ${srcdir}/immutant.profile ${pkgdir}/etc/profile.d/immutant.sh
   install -Dm755 ${srcdir}/immutant.service ${pkgdir}/usr/lib/systemd/system/immutant.service
   install -Dm755 ${srcdir}/immutant.wrapper ${pkgdir}/${_pkgloc}/immutant/jboss/bin/immutant
+  chmod 775 ${pkgdir}/${_pkgloc}/immutant/jboss/standalone/deployments
 }
 
 md5sums=('8e622b530eca2782750d1e9c8457c9b0'
