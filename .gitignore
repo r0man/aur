@@ -8,3 +8,5 @@
 /flume-ng-rabbitmq
 /flume-ng/flume-ng-*.pkg.tar.xz
 /flume-ng/flume-ng-1.3.0-cdh4.3.0.tar.gz
+/flume-ng/pkg
+/flume-ng/src
