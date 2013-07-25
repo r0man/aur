@@ -5,8 +5,12 @@
 /immutant/immutant-0.8.0-1.src.tar.gz
 /immutant/immutant-0.9.0-1-any.pkg.tar.xz
 /immutant/immutant-dist-0.9.0-bin.zip
-/flume-ng-rabbitmq
 /flume-ng/flume-ng-*.pkg.tar.xz
 /flume-ng/flume-ng-1.3.0-cdh4.3.0.tar.gz
 /flume-ng/pkg
 /flume-ng/src
+/flume-ng-rabbitmq/flume-ng-rabbitmq
+/flume-ng-rabbitmq/pkg
+/flume-ng-rabbitmq/src
+/flume-ng-rabbitmq/flume-ng-rabbitmq-1.0-3-any.pkg.tar.xz
+/flume-ng/flume-ng-1.3.0-3.src.tar.gz
