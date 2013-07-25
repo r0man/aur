@@ -1,6 +1,6 @@
 pkgname=flume-ng
 pkgver=1.3.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Distributed system for moving large amounts of log data.'
 arch=('any')
 url='http://flume.apache.org'
