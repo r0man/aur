@@ -1,6 +1,6 @@
 pkgname=flume-ng-rabbitmq
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Flume-NG RabbitMQ'
 arch=('any')
 url='https://github.com/jcustenborder/flume-ng-rabbitmq'
