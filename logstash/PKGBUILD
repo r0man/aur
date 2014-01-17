@@ -1,0 +1,40 @@
+pkgname=logstash
+pkgver=1.3.2
+pkgrel=1
+pkgdesc='Logstash is a tool for managing events and logs'
+arch=('any')
+url='http://logstash.net'
+license=('Apache License')
+depends=('java-environment' 'elasticsearch')
+makedepends=('java-environment')
+install=logstash.install
+
+source=("https://download.elasticsearch.org/logstash/logstash/logstash-1.3.2-flatjar.jar"
+	"logstash.conf"
+	"logstash.env"
+	"logstash.service")
+
+noextract=("logstash-1.3.2-flatjar.jar")
+
+md5sums=('d663873b95898082043c19ac8489de52'
+         '26366e3056284d35cc57ea3876c738f1'
+         '9d1e8ab323df2d8dd747f27c51841c1a'
+         '06ec3866251641e056534657b3d236e3')
+
+package() {
+
+  mkdir -p $pkgdir/etc
+  install -Dm644 ${srcdir}/logstash.conf ${pkgdir}/etc/logstash.conf
+
+  mkdir -p $pkgdir/etc/conf.d
+  install -Dm644 ${srcdir}/logstash.env ${pkgdir}/etc/conf.d/logstash
+
+  mkdir -p $pkgdir/usr/lib/systemd/system
+  install -Dm644 ${srcdir}/logstash.service ${pkgdir}/usr/lib/systemd/system/
+
+  mkdir -p $pkgdir/usr/share/java
+  install -Dm644 ${srcdir}/logstash-$pkgver-flatjar.jar ${pkgdir}/usr/share/java/logstash.jar
+
+  mkdir -p $pkgdir/var/lib/logstash
+
+}

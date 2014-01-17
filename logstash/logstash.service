@@ -1,0 +1,11 @@
+[Unit]
+Description=Logstash
+
+[Service]
+User=logstash
+Group=log
+EnvironmentFile=/etc/conf.d/logstash
+ExecStart=/usr/bin/java -jar /usr/share/java/logstash.jar agent -f $LOGSTASH_CONFIG -- web
+
+[Install]
+WantedBy=multi-user.target
