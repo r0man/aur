@@ -4,8 +4,8 @@ pkgrel=1
 pkgdesc='Distributed system for moving large amounts of log data.'
 arch=('any')
 url='http://flume.apache.org'
-license=('Apache License')
-depends=('java-environment')
+license=('Apache')
+depends=('bash' 'java-environment')
 makedepends=('java-environment')
 install=flume-ng.install
 
