@@ -1,0 +1,29 @@
+pkgname=oozie
+pkgver=3.3.0
+pkgrel=1
+pkgdesc='Workflow Scheduler for Hadoop'
+arch=('any')
+url='http://oozie.apache.org'
+license=('Apache License')
+depends=('java-environment')
+makedepends=('java-environment')
+install=oozie.install
+
+source=("http://ftp.halifax.rwth-aachen.de/apache/oozie/$pkgver/oozie-$pkgver.tar.gz"
+	"oozie.conf"
+	"oozie.profile"
+	"oozie.service")
+
+build() {
+  cd $pkgname-$pkgver
+ # ./bin/mkdistro.sh -DskipTests
+}
+
+package() {
+  mkdir -p $pkgdir/usr/lib/oozie
+  cp -r $srcdir/oozie-$pkgver/distro/target/oozie-$pkgver-distro/oozie-$pkgver $pkgdir/usr/lib/oozie
+  mkdir -p $pkgdir/usr/bin
+  for binary in `ls $srcdir/oozie-$pkgver/distro/target/oozie-$pkgver-distro/oozie-$pkgver/bin`; do
+    ln -s $srcdir/oozie-$pkgver/distro/target/oozie-$pkgver-distro/oozie-$pkgver/bin/$binary $pkgdir/usr/bin/$binary
+  done
+}

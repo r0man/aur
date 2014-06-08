@@ -1,0 +1,15 @@
+post_install() {
+  getent group oozie &>/dev/null || groupadd -r oozie >/dev/null
+  getent passwd oozie &>/dev/null || useradd -r -g oozie -d /etc/oozie oozie >/dev/null
+  true
+}
+
+post_upgrade() {
+  post_install
+}
+
+post_remove() {
+  getent passwd oozie &>/dev/null && userdel oozie >/dev/null
+  getent group oozie &>/dev/null && groupdel oozie >/dev/null
+  true
+}
