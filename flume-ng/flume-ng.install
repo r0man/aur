@@ -1,7 +1,7 @@
 post_install() {
   getent group flume &>/dev/null || groupadd -r flume >/dev/null
   getent passwd flume &>/dev/null || useradd -r -g flume -d /etc/flume flume >/dev/null
-  chown -R flume:flume /etc/flume-ng
+  chown -R flume:flume /etc/flume
   true
 }
 
